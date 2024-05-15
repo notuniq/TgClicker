@@ -1,0 +1,250 @@
+@font-face {
+    font-family: "Prosto Sans";
+    font-style: bold;
+    font-weight: 400;
+    src: local("Roboto"),
+    url("./fonts/prosto.otf") format("otf");
+}
+
+body {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+
+body {
+    background: linear-gradient(to bottom, #101116, #2F3148, #3F5576, #587099, #8689AC);
+    background-size: cover; /* Растягиваем фоновое изображение на всю страницу */
+    text-align: center;
+    justify-content: center;
+    font-family: "Prosto Sans", "Arial", sans-serif;
+}
+
+.counter {
+    font-size: 52px;
+    color: white;
+    font-weight: bold;
+}
+
+.image {
+    width: 300px;
+    height: 300px;
+    transition: transform 0.3s ease;
+}
+
+.image.pressed {
+    transform: scale(0.95);
+}
+
+.menu {
+    margin-top: 150px; /* Отталкиваем меню от верха, чтобы оно было внизу */
+    background-color: #2F3148; /* Цвет фона меню */
+    border-radius: 25px;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-button {
+    background-color: #2F3148;
+    border: none;
+    color: white;
+    padding: 15px 18px;
+    border-radius: 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    height: 10px;
+    width: 80%; /* Начальная ширина */
+    max-width: 90%;
+    background-color: #4CAF50;
+    border-radius: 30px;
+    position: fixed;
+    margin-top: 20px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease; /* Анимация изменения ширины */
+}
+.progress-bar-fill {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 0;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.plus-one {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    animation: appear 0.3s ease forwards;
+}
+
+.rating_main {
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 5px; /* Добавляем небольшой отступ снизу */
+}
+
+.rating_second {
+    font-size: 10px;
+    color: #888888;
+    font-weight: inherit;
+    margin-top: 0; /* Сбрасываем отступ сверху */
+}
+
+.rating_body {
+    margin-top: 50px;
+}
+
+.user_rating {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.username {
+    font-weight: 700;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.level {
+    margin-left: 10px;
+    font-size: 15px;
+    color: #666;
+}
+
+.boosts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.boost {
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%; /* Ширина блока 80% ширины страницы */
+    max-width: 400px; /* Максимальная ширина блока */
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between; /* Равномерное распределение пространства между элементами */
+    color: white;
+}
+
+.boost p {
+    margin: 5px 0;
+}
+
+.boost-info {
+    flex-grow: 1;
+}
+
+.boost-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.boost-cost {
+    font-weight: bold;
+    text-align: center;
+    float: right;
+}
+
+.boost-lvl {
+    color: #666;
+    font-size: 12px;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed; /* Фиксированное положение модального окна */
+    z-index: 1; /* Окно находится выше всех остальных элементов */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ширина модального окна равна ширине экрана */
+    height: 100%; /* Высота модального окна равна высоте экрана */
+    background-color: rgba(0,0,0,0.5); /* Затемненный фон */
+    overflow: auto; /* Добавление прокрутки, если контент модального окна выходит за пределы экрана */
+    padding-top: 60px; /* Отступ сверху */
+    border-radius: 25px;
+}
+
+.modal-content {
+    border-radius: 25px;
+    background-color: #587099;
+    margin: 5% auto; /* Центрирование модального окна */
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    width: 80%; /* Ширина содержимого модального окна */
+}
+
+/* Стили для кнопок в модальном окне */
+.modal button {
+    background-color: #4CAF50; /* Зеленый цвет фона кнопок */
+    color: white; /* Белый цвет текста */
+    padding: 10px 20px; /* Отступы вокруг текста кнопок */
+    margin: 5px; /* Отступы между кнопками */
+    border: none; /* Удаление границы */
+    cursor: pointer; /* Курсор указывает на то, что кнопка может быть нажата */
+    border-radius: 5px; /* Скругление углов кнопок */
+}
+
+/* Стили для кнопок в модальном окне при наведении */
+.modal button:hover {
+    background-color: #45a049; /* Темно-зеленый цвет фона кнопок при наведении */
+}
+
+/* Стили для кнопок в модальном окне при нажатии */
+.modal button:active {
+    background-color: #3e8e41; /* Темно-зеленый цвет фона кнопок при нажатии */
+}
+
+.maxClicks {
+    color: white;
+    font-weight: bold;
+}

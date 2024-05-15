@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="robots" content="noindex,nofollow" />
+    <!--    <script src="../public/js/index.js"></script>-->
+    <!--    <link rel="stylesheet" href="../public/css/styles.css">-->
+    <script src="/javascripts/boosts"></script>
+    <link rel="stylesheet" href="/styles">
+    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+    <script>
+        function setThemeClass() {
+            document.documentElement.className = Telegram.WebApp.colorScheme;
+        }
+
+        Telegram.WebApp.onEvent('themeChanged', setThemeClass);
+        setThemeClass();
+
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+
+    </script>
+</head>
+
+<body>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <p>Вы точно хотите купить буст?</p>
+        <button id="buy">Да</button>
+        <button id="close">Нет</button>
+    </div>
+</div>
+
+<div>
+    <p class="rating_main">Бусты</p>
+    <p class="rating_second">Покупайте, улучшайте и получайте выгоду!</p>
+</div>
+
+<div class="boosts">
+    <div class="boost" id="clicks">
+        <div class="boost-info">
+            <p class="boost-name">Деньги за клики</p>
+            <p class="boost-lvl" id="clicks_lvl">Уровень:</p>
+            <p class="boost-desc">Увеличивает кол-во кликов за одно нажатие</p>
+        </div>
+        <div class="boost-price">
+            <p class="boost-cost" id="clicks_cost"> coins</p>
+        </div>
+    </div>
+
+    <div class="boost" id="5mins">
+        <div class="boost-info">
+            <p class="boost-name">Клики раз в 5 минут</p>
+            <p class="boost-lvl" id="5min_lvl">Уровень:</p>
+            <p class="boost-desc">Увеличивает кол-во кликов, которые можно сделать раз в 5 минут</p>
+        </div>
+        <div class="boost-price">
+            <p class="boost-cost" id="5min_cost"> coins</p>
+        </div>
+    </div>
+
+    <div class="boost">
+        <div class="boost-info">
+            <p class="boost-name">Майнер (в разработке)</p>
+            <p class="boost-lvl">Уровень: 0</p>
+            <p class="boost-desc">Добывает монеты пока вы в оффлайн</p>
+        </div>
+        <div class="boost-price">
+            <p class="boost-cost">0 coins</p>
+        </div>
+    </div>
+</div>
+
+<div class="menu">
+    <button class="menu-button" onclick="redirectTo('/')">Главная</button>
+    <button class="menu-button" onclick="redirectTo('/rating')">Рейтинг</button>
+    <button class="menu-button" onclick="redirectTo('shop.html')">Магазин</button>
+</div>
+</body>
+
+<script src="https://webappcontent.telegram.org/js/jquery.min.js"></script>
+
+</html>
